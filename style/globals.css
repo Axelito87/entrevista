@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --electric-blue: #00a8ff;
+  --electric-blue-light: #4dc9ff;
+  --electric-blue-dark: #0077cc;
+  --electric-blue-glow: #00a8ff80;
+  --dark-bg: #0f172a;
+  --card-bg: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #0a0a0a 100%);
+  color: var(--foreground);
+  font-family: 'Arial', 'Helvetica', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el header principal */
+.header {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--electric-blue);
+  box-shadow: 0 0 20px var(--electric-blue-glow);
+  padding: 1.5rem 0;
+}
+
+.header h1 {
+  color: var(--electric-blue);
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  text-shadow: 0 0 10px var(--electric-blue-glow);
+}
+
+.header h2 {
+  color: var(--electric-blue-light);
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.5rem 0 0 0;
+  font-weight: 400;
+}
+
+/* Estadísticas */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid var(--electric-blue);
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  color: var(--electric-blue-light);
+  font-weight: 600;
+  box-shadow: 0 0 10px var(--electric-blue-glow);
+}
+
+/* Separador */
+.separator {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--electric-blue), transparent);
+  margin: 2rem auto;
+  width: 80%;
+  box-shadow: 0 0 10px var(--electric-blue-glow);
+}
+
+/* Lista de países */
+.countries-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+.country-card {
+  background: var(--card-bg);
+  border: 1px solid var(--electric-blue);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.country-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--electric-blue-glow);
+  border-color: var(--electric-blue-light);
+}
+
+.country-name {
+  color: var(--electric-blue);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  text-shadow: 0 0 5px var(--electric-blue-glow);
+}
+
+.country-region {
+  color: var(--electric-blue-light);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.country-population {
+  color: #ffffff;
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .stats {
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .country-card {
+    padding: 1rem;
+  }
+  
+  .country-name {
+    font-size: 1.3rem;
+  }
+}
+/* Agregar esto a tu globals.css */
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 168, 255, 0.7);
+  }
+  
+  .hover-glow:hover {
+    text-shadow: 0 0 15px rgba(0, 168, 255, 0.9);
+    transform: translateY(-1px);
+  }
+}
+
+/* Definir colores eléctricos */
+:root {
+  --electric-blue: #00a8ff;
+  --electric-blue-light: #4dc9ff;
+  --electric-blue-dark: #0077cc;
+}
+
+/* Clases para los colores eléctricos */
+.text-electric-blue {
+  color: var(--electric-blue);
+}
+
+.text-electric-blue-light {
+  color: var(--electric-blue-light);
+}
+
+.bg-electric-blue {
+  background-color: var(--electric-blue);
+}
+
+.border-electric-blue {
+  border-color: var(--electric-blue);
+}
